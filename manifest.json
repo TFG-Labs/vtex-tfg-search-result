@@ -1,8 +1,8 @@
 {
-  "name": "search-result",
-  "vendor": "vtex",
+  "name": "vtex-tfg-search-result",
+  "vendor": "thefoschini",
   "version": "3.122.2",
-  "title": "VTEX Search Result",
+  "title": "Vtex TFG Search Result",
   "description": "A search result wrapper component",
   "mustUpdateAt": "2019-04-25",
   "registries": [
