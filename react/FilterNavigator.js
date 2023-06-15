@@ -200,21 +200,37 @@ const FilterNavigator = ({
   return (
     <Fragment>
       {loading && !mobileLayout ? (
-        <div className="mv5">
+        <div className="mv5" style={{ marginTop: '' }}>
           <ContentLoader
             style={{
-              width: '230px',
-              height: '320px',
+              width: '290px',
+              height: '1000px',
             }}
-            width="230"
-            height="320"
+            width="290"
+            height="1000"
             y="0"
             x="0"
           >
-            <rect width="100%" height="1em" />
-            <rect width="100%" height="8em" y="1.5em" />
-            <rect width="100%" height="1em" y="10.5em" />
-            <rect width="100%" height="8em" y="12em" />
+            <rect width="100%" height="56px" y="16px" />
+            <rect width="100%" height="56px" y="80px" />
+            <rect width="100%" height="56px" y="144px" />
+            <rect width="100%" height="56px" y="208px" />
+            <rect width="100%" height="56px" y="272px" />
+            <rect width="100%" height="56px" y="336px" />
+            <rect width="100%" height="56px" y="400px" />
+            <rect width="100%" height="56px" y="464px" />
+            <rect width="100%" height="56px" y="528px" />
+            <rect width="100%" height="56px" y="592px" />
+            <rect width="100%" height="56px" y="656px" />
+            <rect width="100%" height="56px" y="720px" />
+            <rect width="100%" height="56px" y="784px" />
+            <rect width="100%" height="56px" y="848px" />
+            <rect width="100%" height="56px" y="912px" />
+            <rect width="100%" height="56px" y="976px" />
+            <rect width="100%" height="56px" y="1040px" />
+            <rect width="100%" height="56px" y="1104px" />
+            <rect width="100%" height="56px" y="1168px" />
+            <rect width="100%" height="56px" y="1232px" />
           </ContentLoader>
         </div>
       ) : null}
