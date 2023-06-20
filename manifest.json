@@ -1,7 +1,7 @@
 {
   "name": "search-result",
   "vendor": "thefoschini",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "title": "Vtex TFG Search Result",
   "description": "A search result wrapper component",
   "mustUpdateAt": "2019-04-25",
