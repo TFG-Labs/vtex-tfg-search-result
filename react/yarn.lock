@@ -5340,10 +5340,6 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-"thefoschini.search-result@https://search--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.0.1+build1686296923/public/@types/thefoschini.search-result":
-  version "3.0.1"
-  resolved "https://search--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.0.1+build1686296923/public/@types/thefoschini.search-result#90abe34f06821c57e0bf41ca4445d3901a2644a7"
-
 throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
