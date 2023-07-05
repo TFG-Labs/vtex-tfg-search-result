@@ -1,5 +1,5 @@
 {
-  "name": "thefoschiniqa.search-result",
+  "name": "thefoschini.search-result",
   "description": "A Search Result.",
   "scripts": {
     "pretest": "yarn",
