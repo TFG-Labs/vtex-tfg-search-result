@@ -41,7 +41,7 @@
     "apollo-cache-inmemory": "^1.6.5",
     "babel-eslint": "^10.1.0",
     "graphql": "^14.6.0",
-    "thefoschini.search-result": "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.search-result@3.0.2/public/@types/thefoschini.search-result",
+    "thefoschini.search-result": "https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688682454/public/@types/thefoschini.search-result",
     "typescript": "3.9.7",
     "vtex.blog-interfaces": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.blog-interfaces@0.2.0/public/@types/vtex.blog-interfaces",
     "vtex.breadcrumb": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb",
@@ -66,7 +66,7 @@
     "vtex.store-resources": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.90.0/public/@types/vtex.store-resources",
     "vtex.structured-data": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.structured-data@0.12.0/public/@types/vtex.structured-data",
     "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide",
-    "vtex.tab-layout": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.tab-layout@0.4.3/public/@types/vtex.tab-layout"
+    "vtex.tab-layout": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.tab-layout@0.4.5/public/@types/vtex.tab-layout"
   },
   "resolutions": {
     "json-schema": "^0.4.0",

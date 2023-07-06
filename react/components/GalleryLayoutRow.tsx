@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { ComponentType } from 'react'
 import React, { memo } from 'react'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 import classNames from 'classnames'
 
 import { useRenderOnView } from '../hooks/useRenderOnView'
-import GalleryItem from './GalleryLayoutItem'
+// import GalleryItem from './GalleryLayoutItem'
 import type { Product } from '../Gallery'
 import type { PreferredSKU } from '../GalleryLayout'
 
@@ -25,16 +26,11 @@ interface GalleryLayoutRowProps {
 }
 
 const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
-  GalleryItemComponent,
   displayMode,
   itemsPerRow,
   lazyRender,
   products,
-  summary,
   currentLayoutName,
-  rowIndex,
-  listName,
-  preferredSKU,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
 
@@ -54,9 +50,7 @@ const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
 
   return (
     <>
-      {products.map((product, index) => {
-        const absoluteProductIndex = rowIndex * itemsPerRow + index + 1
-
+      {products.map(product => {
         return (
           <div
             key={product.cacheId}
@@ -69,7 +63,8 @@ const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
               'pa4'
             )}
           >
-            <GalleryItem
+            <div style={{ width: 100, height: 100, backgroundColor: 'red' }} />
+            {/* <GalleryItem
               GalleryItemComponent={GalleryItemComponent}
               item={product}
               summary={summary}
@@ -77,7 +72,7 @@ const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
               position={absoluteProductIndex}
               listName={listName}
               preferredSKU={preferredSKU}
-            />
+            /> */}
           </div>
         )
       })}
