@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useCallback } from 'react'
 import classNames from 'classnames'
 import { useCssHandles } from 'vtex.css-handles'
@@ -34,7 +35,7 @@ const GalleryLayoutSwitcher: React.FC = ({ children }) => {
       }
 
       const currentFocusedIndex = galleryLayouts.findIndex(
-        layout =>
+        (layout: { name: any }) =>
           layout.name === (focusedGalleryLayout ?? selectedGalleryLayout)
       )
 
@@ -56,11 +57,6 @@ const GalleryLayoutSwitcher: React.FC = ({ children }) => {
        */
       if (e.key === 'ArrowLeft') {
         newFocusedLayoutIndex = Math.max(0, currentFocusedIndex - 1)
-      } else if (e.key === 'ArrowRight') {
-        newFocusedLayoutIndex = Math.min(
-          currentFocusedIndex + 1,
-          galleryLayouts.length - 1
-        )
       } else if (e.key === 'ArrowUp') {
         newFocusedLayoutIndex =
           (currentFocusedIndex - 1) % galleryLayouts.length
@@ -68,9 +64,6 @@ const GalleryLayoutSwitcher: React.FC = ({ children }) => {
         if (newFocusedLayoutIndex < 0) {
           newFocusedLayoutIndex = galleryLayouts.length - 1
         }
-      } else if (e.key === 'ArrowDown') {
-        newFocusedLayoutIndex =
-          (currentFocusedIndex + 1) % galleryLayouts.length
       }
 
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
