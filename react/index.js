@@ -1,79 +1,38 @@
-import React, { useMemo } from 'react'
-import { useRuntime } from 'vtex.render-runtime'
-import { SearchPageContext } from 'vtex.search-page-context/SearchPageContext'
+import React from 'react'
 
-import SearchResultContainer from './components/SearchResultContainer'
 import { SORT_OPTIONS } from './OrderBy'
-import LocalQuery from './components/LocalQuery'
 import { LAYOUT_MODE } from './components/LayoutModeSwitcher'
-import ContextProviders from './components/ContextProviders'
 import { PAGINATION_TYPES } from './constants/paginationType'
 
 const DEFAULT_MAX_ITEMS_PER_PAGE = 10
 
-/**
- * Search Result Query Loader Component.
- * This Component queries the search if the search-result doesn't receive it already
- */
-const trimStartingSlash = value => value && value.replace(/^\//, '')
-
 const SearchResult = props => {
-  const {
-    querySchema,
-    hiddenFacets,
-    pagination,
-    mobileLayout,
-    searchQuery,
-    trackingId,
-  } = props
+  const { querySchema, searchQuery } = props
 
-  const { query } = useRuntime()
-  const settings = useMemo(
-    () => ({
-      hiddenFacets,
-      pagination,
-      mobileLayout,
-      trackingId,
-    }),
-    [hiddenFacets, mobileLayout, pagination, trackingId]
-  )
+  // const { query } = useRuntime()
+  // const settings = useMemo(
+  //   () => ({
+  //     hiddenFacets,
+  //     pagination,
+  //     mobileLayout,
+  //     trackingId,
+  //   }),
+  //   [hiddenFacets, mobileLayout, pagination, trackingId]
+  // )
 
-  const fieldsFromQueryString = {
-    mapField: query.map,
-    queryField: trimStartingSlash(query.query),
-  }
+  // const fieldsFromQueryString = {
+  //   mapField: query.map,
+  //   queryField: trimStartingSlash(query.query),
+  // }
 
-  const areFieldsFromQueryStringValid = !!(
-    fieldsFromQueryString.mapField && fieldsFromQueryString.queryField
-  )
+  // const areFieldsFromQueryStringValid = !!(
+  //   fieldsFromQueryString.mapField && fieldsFromQueryString.queryField
+  // )
 
   return !searchQuery || (querySchema && querySchema.enableCustomQuery) ? (
-    <LocalQuery
-      {...props}
-      {...querySchema}
-      {...(areFieldsFromQueryStringValid ? fieldsFromQueryString : {})}
-      render={localQueryProps => (
-        <SearchPageContext.Provider
-          value={{ searchQuery: localQueryProps.searchQuery }}
-        >
-          <ContextProviders
-            queryVariables={localQueryProps.searchQuery.variables}
-            settings={settings}
-          >
-            <SearchResultContainer {...localQueryProps} />
-          </ContextProviders>
-        </SearchPageContext.Provider>
-      )}
-    />
+    <div style={{ width: 500, height: 500, backgroundColor: 'red' }} />
   ) : (
-    <SearchPageContext.Provider value={{ searchQuery }}>
-      <ContextProviders
-        queryVariables={searchQuery.variables}
-        settings={settings}
-      >
-        <SearchResultContainer {...props} />
-      </ContextProviders>
-    </SearchPageContext.Provider>
+    <div style={{ width: 500, height: 500, backgroundColor: 'red' }} />
   )
 }
 

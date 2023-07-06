@@ -5340,9 +5340,9 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-"thefoschini.search-result@https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688682454/public/@types/thefoschini.search-result":
+"thefoschini.search-result@https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688683649/public/@types/thefoschini.search-result":
   version "3.131.0"
-  resolved "https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688682454/public/@types/thefoschini.search-result#149d0c2e6b22b888210f7a68106b35da626a4bcc"
+  resolved "https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688683649/public/@types/thefoschini.search-result#4e0b9ade848cbb09bf7149af97d778c4d17f2705"
 
 throat@^5.0.0:
   version "5.0.0"
