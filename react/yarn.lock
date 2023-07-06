@@ -5340,9 +5340,9 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-"thefoschini.search-result@https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688683649/public/@types/thefoschini.search-result":
-  version "3.131.0"
-  resolved "https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1688683649/public/@types/thefoschini.search-result#4e0b9ade848cbb09bf7149af97d778c4d17f2705"
+"thefoschini.search-result@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.search-result@3.131.1-beta.0/public/@types/thefoschini.search-result":
+  version "3.131.1-beta.0"
+  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.search-result@3.131.1-beta.0/public/@types/thefoschini.search-result#e2592f881101cd66e29b855f80db58e2ad132168"
 
 throat@^5.0.0:
   version "5.0.0"
@@ -5597,10 +5597,6 @@ validate-npm-package-license@^3.0.1:
 "vtex.rich-text@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.rich-text@0.16.0/public/@types/vtex.rich-text":
   version "0.16.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.rich-text@0.16.0/public/@types/vtex.rich-text#0cdcaccffb37ae0d025894ba7055f69bc3c9aa30"
-
-"vtex.search-page-context@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-page-context@0.2.0/public/@types/vtex.search-page-context":
-  version "0.2.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-page-context@0.2.0/public/@types/vtex.search-page-context#1b37f20648d8e4ff062ae9fffb0aa2718f172af7"
 
 "vtex.shelf@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shelf@1.47.3/public/@types/vtex.shelf":
   version "1.47.3"
