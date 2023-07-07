@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import React, { useMemo } from 'react'
-import { useIntl } from 'react-intl'
+import React from 'react'
+// import { useIntl } from 'react-intl'
 
-import SelectionListOrderBy from './components/SelectionListOrderBy'
+// import SelectionListOrderBy from './components/SelectionListOrderBy'
 
 export const SORT_OPTIONS = [
   {
@@ -39,33 +39,28 @@ export const SORT_OPTIONS = [
   },
 ]
 
-const OrderBy = ({
-  orderBy,
-  message,
-  specificationOptions = [],
-  hiddenOptions = [],
-  showOrderTitle = true,
-}) => {
-  const intl = useIntl()
+const OrderBy = () => {
+  // const intl = useIntl()
 
-  const sortingOptions = useMemo(() => {
-    return SORT_OPTIONS.concat(specificationOptions)
-      .filter(option => !hiddenOptions.includes(option.value) && option.label)
-      .map(({ value, label }) => {
-        return {
-          value,
-          label: intl.formatMessage({ id: label }),
-        }
-      })
-  }, [intl, hiddenOptions, specificationOptions])
+  // const sortingOptions = useMemo(() => {
+  //   return SORT_OPTIONS.concat(specificationOptions)
+  //     .filter(option => !hiddenOptions.includes(option.value) && option.label)
+  //     .map(({ value, label }) => {
+  //       return {
+  //         value,
+  //         label: intl.formatMessage({ id: label }),
+  //       }
+  //     })
+  // }, [intl, hiddenOptions, specificationOptions])
 
   return (
-    <SelectionListOrderBy
-      orderBy={orderBy}
-      message={message}
-      options={sortingOptions}
-      showOrderTitle={showOrderTitle}
-    />
+    <div />
+    // <SelectionListOrderBy
+    //   orderBy={orderBy}
+    //   message={message}
+    //   options={sortingOptions}
+    //   showOrderTitle={showOrderTitle}
+    // />
   )
 }
 
