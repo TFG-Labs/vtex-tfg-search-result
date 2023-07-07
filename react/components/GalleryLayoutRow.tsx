@@ -4,7 +4,7 @@ import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 import classNames from 'classnames'
 
 import { useRenderOnView } from '../hooks/useRenderOnView'
-import GalleryItem from './GalleryLayoutItem'
+// import GalleryItem from './GalleryLayoutItem'
 import type { Product } from '../Gallery'
 import type { PreferredSKU } from '../GalleryLayout'
 
@@ -25,16 +25,16 @@ interface GalleryLayoutRowProps {
 }
 
 const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
-  GalleryItemComponent,
+  // GalleryItemComponent,
   displayMode,
   itemsPerRow,
   lazyRender,
   products,
-  summary,
+  // summary,
   currentLayoutName,
-  rowIndex,
-  listName,
-  preferredSKU,
+  // rowIndex,
+  // listName,
+  // preferredSKU,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
 
@@ -55,7 +55,7 @@ const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
   return (
     <>
       {products.map((product, index) => {
-        const absoluteProductIndex = rowIndex * itemsPerRow + index + 1
+        // const absoluteProductIndex = rowIndex * itemsPerRow + index + 1
 
         return (
           <div
@@ -69,7 +69,11 @@ const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
               'pa4'
             )}
           >
-            <GalleryItem
+            <div
+              key={index}
+              style={{ width: 170, height: 170, backgroundColor: 'grey' }}
+            />
+            {/* <GalleryItem
               GalleryItemComponent={GalleryItemComponent}
               item={product}
               summary={summary}
@@ -77,7 +81,7 @@ const GalleryLayoutRow: React.FC<GalleryLayoutRowProps> = ({
               position={absoluteProductIndex}
               listName={listName}
               preferredSKU={preferredSKU}
-            />
+            /> */}
           </div>
         )
       })}
