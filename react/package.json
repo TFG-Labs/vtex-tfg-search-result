@@ -41,7 +41,7 @@
     "apollo-cache-inmemory": "^1.6.5",
     "babel-eslint": "^10.1.0",
     "graphql": "^14.6.0",
-    "thefoschini.search-result": "https://bpf1431--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.10-beta.0+build1688714254/public/@types/thefoschini.search-result",
+    "thefoschini.search-result": "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.search-result@3.131.0/public/@types/thefoschini.search-result",
     "typescript": "3.9.7",
     "vtex.blog-interfaces": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.blog-interfaces@0.2.0/public/@types/vtex.blog-interfaces",
     "vtex.breadcrumb": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb",
