@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { ProductList as ProductListStructuredData } from 'vtex.structured-data'
 
-import GalleryLayout from './GalleryLayout'
+// import GalleryLayout from './GalleryLayout'
 import type { GalleryLayoutProps, Slots } from './GalleryLayout'
 import type { GalleryProps as GalleryLegacyProps } from './GalleryLegacy'
 import GalleryLegacy from './GalleryLegacy'
@@ -17,20 +17,25 @@ const Gallery: React.FC<
   GalleryLegacyProps | GalleryLayoutPropsWithSlots
 > = props => {
   if ('layouts' in props && props.layouts.length > 0) {
-    const {
-      layouts,
-      lazyItemsRemaining,
-      products,
-      showingFacets,
-      summary,
-      preferredSKU,
-      ...slots
-    } = props as GalleryLayoutPropsWithSlots
+    const { products } = props as GalleryLayoutPropsWithSlots
 
     return (
       <Fragment>
         <ProductListStructuredData products={products} />
-        <GalleryLayout
+
+        {products.map((_item, index) => (
+          <div
+            key={index}
+            style={{
+              width: 170,
+              height: 170,
+              backgroundColor: 'grey',
+              margin: 15,
+            }}
+          />
+        ))}
+
+        {/* <GalleryLayout
           layouts={layouts}
           lazyItemsRemaining={lazyItemsRemaining}
           products={products}
@@ -38,7 +43,7 @@ const Gallery: React.FC<
           summary={summary}
           slots={slots}
           preferredSKU={preferredSKU}
-        />
+        /> */}
       </Fragment>
     )
   }

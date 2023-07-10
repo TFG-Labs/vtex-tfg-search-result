@@ -224,16 +224,25 @@ class SearchResult extends Component {
                 <div className="w3 ma0">
                   <Spinner />
                 </div>
+
+                <div
+                  style={{ width: 400, heigth: 400, backgroundColor: 'red' }}
+                />
               </div>
             ) : products.length > 0 ? (
-              <ExtensionPoint
-                id="gallery"
-                products={products}
-                summary={summary}
-                className="bn"
-                mobileLayoutMode={mobileLayoutMode}
-                showingFacets={showFacets}
-              />
+              <>
+                <div
+                  style={{ width: 400, heigth: 400, backgroundColor: 'red' }}
+                />
+                <ExtensionPoint
+                  id="gallery"
+                  products={products}
+                  summary={summary}
+                  className="bn"
+                  mobileLayoutMode={mobileLayoutMode}
+                  showingFacets={showFacets}
+                />
+              </>
             ) : (
               <div className={styles.gallery}>
                 <ExtensionPoint id="not-found" />
