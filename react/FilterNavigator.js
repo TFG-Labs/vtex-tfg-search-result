@@ -104,6 +104,13 @@ const FilterNavigator = ({
   const { isMobile } = useDevice()
   const handles = useCssHandles(CSS_HANDLES)
   const [truncatedFacetsFetched, setTruncatedFacetsFetched] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('filterButtonLoaded', isLoaded);
+  }, [isLoaded]);
+
+  console.log(isLoaded)
 
   const mobileLayout =
     (isMobile && layout === LAYOUT_TYPES.responsive) ||
@@ -155,6 +162,8 @@ const FilterNavigator = ({
           }
         },
       })
+    }else {
+      setIsLoaded(true);
     }
   }, [filters, filtersFetchMore, truncatedFacetsFetched, loading])
 
@@ -235,7 +244,7 @@ const FilterNavigator = ({
         </div>
       ) : null}
 
-      {mobileLayout ? (
+      {mobileLayout && isLoaded ? (
         <div className={styles.filters}>
           <div className={`${filterClasses} ${handles.filtersWrapperMobile}`}>
             <FilterSidebar

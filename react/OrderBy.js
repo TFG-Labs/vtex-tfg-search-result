@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useMemo } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import { useIntl } from 'react-intl'
 
 import SelectionListOrderBy from './components/SelectionListOrderBy'
@@ -47,6 +47,7 @@ const OrderBy = ({
   showOrderTitle = true,
 }) => {
   const intl = useIntl()
+  const checkFilterButtonLoaded = typeof localStorage !== 'undefined' && localStorage.getItem('filterButtonLoaded');
 
   const sortingOptions = useMemo(() => {
     return SORT_OPTIONS.concat(specificationOptions)
@@ -60,12 +61,17 @@ const OrderBy = ({
   }, [intl, hiddenOptions, specificationOptions])
 
   return (
-    <SelectionListOrderBy
-      orderBy={orderBy}
-      message={message}
-      options={sortingOptions}
-      showOrderTitle={showOrderTitle}
-    />
+    <Fragment>
+    {checkFilterButtonLoaded && (
+      <SelectionListOrderBy
+        orderBy={orderBy}
+        message={message}
+        options={sortingOptions}
+        showOrderTitle={showOrderTitle}
+      />
+    )}
+
+    </Fragment>
   )
 }
 
