@@ -54,7 +54,7 @@ const RenderImage = (item: Product, handles: any) => {
   const { isMobile } = useDevice()
   const resizedUrl = changeImageUrlSize(
     product.images[0].imageUrl,
-    isMobile ? 179 : 300
+    isMobile ? 179 : 179
   )
 
   return (
