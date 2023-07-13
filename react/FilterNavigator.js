@@ -160,8 +160,8 @@ const FilterNavigator = ({
 
   const selectedFilters = useMemo(() => {
     const options = [
-      ...specificationFilters.map(filter => {
-        return filter.facets.map(facet => {
+      ...specificationFilters?.map(filter => {
+        return filter.facets?.map(facet => {
           return {
             ...newNamedFacet({ ...facet, title: filter.name }),
             hidden: filter.hidden,
@@ -234,95 +234,91 @@ const FilterNavigator = ({
           </ContentLoader>
         </div>
       ) : null}
-
-      {mobileLayout ? (
-        <div className={styles.filters}>
-          <div className={`${filterClasses} ${handles.filtersWrapperMobile}`}>
-            <FilterSidebar
-              selectedFilters={selectedCategories.concat(selectedFilters)}
-              filters={filters}
-              tree={tree}
-              priceRange={priceRange}
-              preventRouteChange={preventRouteChange}
-              navigateToFacet={navigateToFacet}
-              appliedFiltersOverview={appliedFiltersOverview}
-              totalProductsOnMobile={totalProductsOnMobile}
-              fullWidth={fullWidthOnMobile}
-              navigationType={navigationTypeOnMobile}
-              initiallyCollapsed={initiallyCollapsed}
-              truncateFilters={truncateFilters}
-              truncatedFacetsFetched={truncatedFacetsFetched}
-              setTruncatedFacetsFetched={setTruncatedFacetsFetched}
-              categoryFiltersMode={categoryFiltersMode}
-              loading={loading}
-              updateOnFilterSelectionOnMobile={updateOnFilterSelectionOnMobile}
-              showClearByFilter={showClearByFilter}
-              priceRangeLayout={priceRangeLayout}
-              filtersDrawerDirectionMobile={filtersDrawerDirectionMobile}
-              showQuantityBadgeOnMobile={showQuantityBadgeOnMobile}
+      <div className={styles.filters}>
+        <div className={`${filterClasses} ${handles.filtersWrapperMobile}`}>
+          <FilterSidebar
+            selectedFilters={selectedCategories.concat(selectedFilters)}
+            filters={filters}
+            tree={tree}
+            priceRange={priceRange}
+            preventRouteChange={preventRouteChange}
+            navigateToFacet={navigateToFacet}
+            appliedFiltersOverview={appliedFiltersOverview}
+            totalProductsOnMobile={totalProductsOnMobile}
+            fullWidth={fullWidthOnMobile}
+            navigationType={navigationTypeOnMobile}
+            initiallyCollapsed={initiallyCollapsed}
+            truncateFilters={truncateFilters}
+            truncatedFacetsFetched={truncatedFacetsFetched}
+            setTruncatedFacetsFetched={setTruncatedFacetsFetched}
+            categoryFiltersMode={categoryFiltersMode}
+            loading={loading}
+            updateOnFilterSelectionOnMobile={updateOnFilterSelectionOnMobile}
+            showClearByFilter={showClearByFilter}
+            priceRangeLayout={priceRangeLayout}
+            filtersDrawerDirectionMobile={filtersDrawerDirectionMobile}
+            showQuantityBadgeOnMobile={showQuantityBadgeOnMobile}
+          />
+        </div>
+      </div>
+      <Fragment>
+        <div className={`${filterClasses} ${handles.filtersWrapper}`}>
+          <div
+            className={`${applyModifiers(
+              handles.filter__container,
+              'title'
+            )} bb b--muted-4`}
+          >
+            <FilterNavigatorTitleTag
+              filtersTitleHtmlTag={filtersTitleHtmlTag}
             />
           </div>
-        </div>
-      ) : (
-        <Fragment>
-          <div className={`${filterClasses} ${handles.filtersWrapper}`}>
+          <SelectedFilters
+            filters={selectedFilters}
+            preventRouteChange={preventRouteChange}
+            navigateToFacet={navigateToFacet}
+          />
+          <DepartmentFilters
+            title={CATEGORIES_TITLE}
+            tree={tree}
+            isVisible={!hiddenFacets.categories}
+            onCategorySelect={navigateToFacet}
+            preventRouteChange={preventRouteChange}
+            maxItemsDepartment={maxItemsDepartment}
+            maxItemsCategory={maxItemsCategory}
+            categoryFiltersMode={categoryFiltersMode}
+          />
+          <AvailableFilters
+            filters={filters}
+            priceRange={priceRange}
+            preventRouteChange={preventRouteChange}
+            initiallyCollapsed={initiallyCollapsed}
+            navigateToFacet={navigateToFacet}
+            truncatedFacetsFetched={truncatedFacetsFetched}
+            setTruncatedFacetsFetched={setTruncatedFacetsFetched}
+            truncateFilters={truncateFilters}
+            openFiltersMode={openFiltersMode}
+            closeOnOutsideClick={closeOnOutsideClick}
+            appliedFiltersOverview={appliedFiltersOverview}
+            showClearByFilter={showClearByFilter}
+            priceRangeLayout={priceRangeLayout}
+            scrollToTop={scrollToTop}
+          />
+          {showClearAllFiltersOnDesktop && hasFiltersApplied && (
             <div
               className={`${applyModifiers(
                 handles.filter__container,
-                'title'
+                'clearAllFilters'
               )} bb b--muted-4`}
             >
-              <FilterNavigatorTitleTag
-                filtersTitleHtmlTag={filtersTitleHtmlTag}
-              />
+              <Button onClick={handleResetFilters}>
+                <FormattedMessage id="store/search-result.filter-button.clearAll" />
+              </Button>
             </div>
-            <SelectedFilters
-              filters={selectedFilters}
-              preventRouteChange={preventRouteChange}
-              navigateToFacet={navigateToFacet}
-            />
-            <DepartmentFilters
-              title={CATEGORIES_TITLE}
-              tree={tree}
-              isVisible={!hiddenFacets.categories}
-              onCategorySelect={navigateToFacet}
-              preventRouteChange={preventRouteChange}
-              maxItemsDepartment={maxItemsDepartment}
-              maxItemsCategory={maxItemsCategory}
-              categoryFiltersMode={categoryFiltersMode}
-            />
-            <AvailableFilters
-              filters={filters}
-              priceRange={priceRange}
-              preventRouteChange={preventRouteChange}
-              initiallyCollapsed={initiallyCollapsed}
-              navigateToFacet={navigateToFacet}
-              truncatedFacetsFetched={truncatedFacetsFetched}
-              setTruncatedFacetsFetched={setTruncatedFacetsFetched}
-              truncateFilters={truncateFilters}
-              openFiltersMode={openFiltersMode}
-              closeOnOutsideClick={closeOnOutsideClick}
-              appliedFiltersOverview={appliedFiltersOverview}
-              showClearByFilter={showClearByFilter}
-              priceRangeLayout={priceRangeLayout}
-              scrollToTop={scrollToTop}
-            />
-            {showClearAllFiltersOnDesktop && hasFiltersApplied && (
-              <div
-                className={`${applyModifiers(
-                  handles.filter__container,
-                  'clearAllFilters'
-                )} bb b--muted-4`}
-              >
-                <Button onClick={handleResetFilters}>
-                  <FormattedMessage id="store/search-result.filter-button.clearAll" />
-                </Button>
-              </div>
-            )}
-          </div>
-          <ExtensionPoint id="shop-review-summary" />
-        </Fragment>
-      )}
+          )}
+        </div>
+        <ExtensionPoint id="shop-review-summary" />
+      </Fragment>
     </Fragment>
   )
 }
