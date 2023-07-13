@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
+import { useDevice } from 'vtex.device-detector'
 import { ProductList as ProductListStructuredData } from 'vtex.structured-data'
 
 // import GalleryLayout from './GalleryLayout'
@@ -8,7 +9,12 @@ import type { GalleryProps as GalleryLegacyProps } from './GalleryLegacy'
 import GalleryLegacy from './GalleryLegacy'
 import { changeImageUrlSize } from './utils/normalize'
 
-const CSS_HANDLES = ['searchGrid', 'searchColumn', 'searchColumnImage']
+const CSS_HANDLES = [
+  'searchGrid',
+  'searchColumn',
+  'searchColumnImage',
+  'searchProductName',
+]
 
 /*
  * This type receives Slots directly, instead of using the 'slots' prop to do it.
@@ -45,7 +51,11 @@ export function resizePorportional(url: string, targetWidth: number): string {
 const RenderImage = (item: Product, handles: any) => {
   const [product] = item.items
 
-  const resizedUrl = changeImageUrlSize(product.images[0].imageUrl, 300)
+  const { isMobile } = useDevice()
+  const resizedUrl = changeImageUrlSize(
+    product.images[0].imageUrl,
+    isMobile ? 179 : 300
+  )
 
   return (
     <div>
@@ -71,9 +81,11 @@ const Gallery: React.FC<
         <ProductListStructuredData products={products} />
 
         <div className={handles.searchGrid}>
-          {products.map((item, index) => (
+          {products.map((item: Product, index) => (
             <div className={handles.searchColumn} key={index}>
               {RenderImage(item, handles)}
+              <p className={handles.searchProductName}>{item.productName}</p>
+              <p className={handles.searchProductName}>{item.brand}</p>
             </div>
           ))}
         </div>
