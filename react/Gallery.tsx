@@ -4,7 +4,6 @@ import { useCssHandles } from 'vtex.css-handles'
 import { useDevice } from 'vtex.device-detector'
 import { ProductList as ProductListStructuredData } from 'vtex.structured-data'
 import ProductSummary from 'vtex.product-summary/ProductSummaryCustom'
-import AddtoWist from 'thefoschini.wish-list/AddProductBtn'
 import { ProductContextProvider } from 'vtex.product-context'
 import { Link } from 'vtex.render-runtime'
 
@@ -122,7 +121,6 @@ const Gallery: React.FC<
                 product={GetStructuredData(index)}
                 query={{}}
               >
-                <AddtoWist />
               </ProductContextProvider>
             </div>
             {RenderImage(item, handles)}
