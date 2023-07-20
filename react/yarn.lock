@@ -5340,9 +5340,9 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-"thefoschini.search-result@https://harrison--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.0.2+build1689082866/public/@types/thefoschini.search-result":
+"thefoschini.search-result@https://bpf1432--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.0.2+build1689776581/public/@types/thefoschini.search-result":
   version "3.0.2"
-  resolved "https://harrison--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.0.2+build1689082866/public/@types/thefoschini.search-result#61ac1d4197852b09876b05596d042ae814f75aa0"
+  resolved "https://bpf1432--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.0.2+build1689776581/public/@types/thefoschini.search-result#e5a227d50849bd6f1c2e7fc7f49876328655f54d"
 
 throat@^5.0.0:
   version "5.0.0"
@@ -5546,6 +5546,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+"vtex.blog-interfaces@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.blog-interfaces@0.2.0/public/@types/vtex.blog-interfaces":
+  version "0.2.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.blog-interfaces@0.2.0/public/@types/vtex.blog-interfaces#a655b819157a93a52a599aea6687b63922fff49c"
+
 "vtex.breadcrumb@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb":
   version "1.9.4"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb#624d6ddbd839bccd2b08e10f0f5f4a0509de834b"
@@ -5553,6 +5557,10 @@ validate-npm-package-license@^3.0.1:
 "vtex.css-handles@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles":
   version "0.4.4"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles#8c45c6decf9acd2b944e07261686decff93d6422"
+
+"vtex.device-detector@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.device-detector@0.2.6/public/@types/vtex.device-detector":
+  version "0.2.6"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.device-detector@0.2.6/public/@types/vtex.device-detector#3219242fa5c2f14023d33c3549c2d8de93c76d1f"
 
 "vtex.flex-layout@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.21.3/public/@types/vtex.flex-layout":
   version "0.21.3"

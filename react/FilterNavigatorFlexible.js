@@ -41,6 +41,7 @@ const withSearchPageContextProps =
       hiddenFacets,
       filters,
       showFacets,
+      orderBy,
       preventRouteChange,
       facetsLoading,
     } = useSearchPage()
@@ -70,7 +71,7 @@ const withSearchPageContextProps =
       [filters, facetOrdering]
     )
 
-    if (showFacets === false || !map) {
+    if (showFacets === false && orderBy !== 'DESC' || !map) {
       return null
     }
 

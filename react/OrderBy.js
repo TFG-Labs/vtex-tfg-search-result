@@ -47,7 +47,6 @@ const OrderBy = ({
   showOrderTitle = true,
 }) => {
   const intl = useIntl()
-  const checkFilterButtonLoaded = typeof localStorage !== 'undefined' && localStorage.getItem('filterButtonLoaded');
 
   const sortingOptions = useMemo(() => {
     return SORT_OPTIONS.concat(specificationOptions)
@@ -62,14 +61,14 @@ const OrderBy = ({
 
   return (
     <Fragment>
-    {checkFilterButtonLoaded && (
+      {/* <div style={{ display: checkFilterButtonLoaded === false && 'none' }}> */}
       <SelectionListOrderBy
         orderBy={orderBy}
         message={message}
         options={sortingOptions}
         showOrderTitle={showOrderTitle}
       />
-    )}
+      {/* </div> */}
 
     </Fragment>
   )

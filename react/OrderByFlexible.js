@@ -6,9 +6,9 @@ import styles from './searchResult.css'
 
 // eslint-disable-next-line react/display-name
 const withSearchPageContextProps = Component => props => {
-  const { orderBy } = useSearchPage()
+  const { orderBy, showFacets } = useSearchPage()
 
-  if (orderBy == null) {
+  if (showFacets === false && orderBy !== 'DESC') {
     return null
   }
 
