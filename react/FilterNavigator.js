@@ -236,7 +236,7 @@ const FilterNavigator = ({
       ) : null}
 
       {mobileLayout ? (
-        <div className={styles.filters} style={{ display: loading && 'none' }}>
+        <div className={styles.filters}>
           <div className={`${filterClasses} ${handles.filtersWrapperMobile}`}>
             <FilterSidebar
               selectedFilters={selectedCategories.concat(selectedFilters)}
