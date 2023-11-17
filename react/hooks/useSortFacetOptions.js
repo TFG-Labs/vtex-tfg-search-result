@@ -31,9 +31,11 @@ const clothingSizes = [
 const bedSizes = [
   'single',
   'three-quarter',
+  'threeqtr',
   'double',
   'queen',
   'king',
+  'kingxl',
   'super-king',
 ]
 
