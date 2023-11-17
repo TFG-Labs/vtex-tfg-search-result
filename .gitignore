@@ -30,7 +30,6 @@ node_modules/
 docs/_book/
 .tmp
 .idea
-.vscode
 npm-debug.log
 .build/
 lib
