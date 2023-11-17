@@ -3,8 +3,14 @@ const clothingSizes = [
   '2xs',
   'xs',
   's',
+  's - m',
+  's-m',
   'm',
+  'm - l',
+  'm-l',
   'l',
+  'l - xl',
+  'l-xl',
   'xl',
   'xxl',
   '2xl',
@@ -55,12 +61,16 @@ const useSortFacetOptions = (facet, options) => {
 
     // sort clothing sizes by index in clothingSizes array
     clothingSizesOptions.sort(
-      (a, b) => clothingSizes.indexOf(a.name) - clothingSizes.indexOf(b.name)
+      (a, b) =>
+        clothingSizes.indexOf(a.name.toLowerCase()) -
+        clothingSizes.indexOf(b.name.toLowerCase())
     )
 
     // sort bed sizes by index in bedSizes array
     bedSizeOptions.sort(
-      (a, b) => bedSizes.indexOf(a.name) - bedSizes.indexOf(b.name)
+      (a, b) =>
+        bedSizes.indexOf(a.name.toLowerCase()) -
+        bedSizes.indexOf(b.name.toLowerCase())
     )
 
     return [...clothingSizesOptions, ...bedSizeOptions, ...otherSizeOptions]
