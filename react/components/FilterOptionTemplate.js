@@ -1,27 +1,27 @@
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, {
-  useState,
   useCallback,
+  useContext,
+  useEffect,
   useMemo,
   useRef,
-  useEffect,
-  useContext,
+  useState,
 } from 'react'
-import { FormattedMessage } from 'react-intl'
 import { Collapse } from 'react-collapse'
-import classNames from 'classnames'
+import { FormattedMessage } from 'react-intl'
+import { useCssHandles } from 'vtex.css-handles'
 import { useRuntime } from 'vtex.render-runtime'
 import { IconCaret } from 'vtex.store-icons'
-import { useCssHandles } from 'vtex.css-handles'
 import { Tag } from 'vtex.styleguide'
 
+import { FACETS_RENDER_THRESHOLD } from '../constants/filterConstants'
+import useOutsideClick from '../hooks/useOutsideClick'
+import { useRenderOnView } from '../hooks/useRenderOnView'
 import styles from '../searchResult.css'
 import { SearchFilterBar } from './SearchFilterBar'
 import SettingsContext from './SettingsContext'
-import useOutsideClick from '../hooks/useOutsideClick'
 import ShowMoreFilterButton from './ShowMoreFilterButton'
-import { useRenderOnView } from '../hooks/useRenderOnView'
-import { FACETS_RENDER_THRESHOLD } from '../constants/filterConstants'
 
 /** Returns true if elementRef has ever been scrolled */
 const useHasScrolled = elementRef => {
@@ -165,6 +165,10 @@ const FilterOptionTemplate = ({
       <>
         {filteredFacets.slice(0, endSlice).map(children)}
         {placeholderSize > 0 && <div style={{ height: placeholderSize }} />}
+        {/* Empty filter box for justify-content */}
+        {!truncated && (
+          <div className="thefoschini-search-result-3-x-filterItem thefoschini-search-result-3-x-filterItem--tfg-plp-filters lh-copy w-100 thefoschini-search-result-3-x-filterItemFiller" />
+        )}
         {shouldTruncate && (
           <ShowMoreFilterButton
             quantity={quantity - FACETS_RENDER_THRESHOLD}
