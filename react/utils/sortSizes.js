@@ -12,6 +12,7 @@ const clothingSizes = [
   'medium',
   'm - l',
   'm-l',
+  'ml',
   'l',
   'large',
   'l - xl',
@@ -39,7 +40,19 @@ const bedSizes = [
   'super-king',
 ]
 
-const useSortFacetOptions = (facet, options) => {
+const pillowSizes = ['standard', 'emporer']
+const towelSizes = [
+  'facecloth',
+  'face cloth',
+  'handtowel',
+  'hand towel',
+  'bathtowel',
+  'bath towel',
+  'bathsheet',
+  'bath sheet',
+]
+
+const sortSizes = (facet, options) => {
   if (facet === 'Size') {
     // clothing sizes from 2xs to 5xl
 
@@ -51,9 +64,22 @@ const useSortFacetOptions = (facet, options) => {
       bedSizes.includes(option.name.toLowerCase())
     )
 
+    const pillowSizeOptions = options.filter(option =>
+      pillowSizes.includes(option.name.toLowerCase())
+    )
+
+    const towelSizeOptions = options.filter(option =>
+      towelSizes.includes(option.name.toLowerCase())
+    )
+
     const otherSizeOptions = options.filter(
       option =>
-        ![...clothingSizes, ...bedSizes].includes(option.name.toLowerCase())
+        ![
+          ...clothingSizes,
+          ...bedSizes,
+          ...pillowSizes,
+          ...towelSizes,
+        ].includes(option.name.toLowerCase())
     )
 
     otherSizeOptions.sort((a, b) => {
@@ -81,10 +107,28 @@ const useSortFacetOptions = (facet, options) => {
         bedSizes.indexOf(b.name.toLowerCase())
     )
 
-    return [...clothingSizesOptions, ...bedSizeOptions, ...otherSizeOptions]
+    pillowSizeOptions.sort(
+      (a, b) =>
+        pillowSizes.indexOf(a.name.toLowerCase()) -
+        pillowSizes.indexOf(b.name.toLowerCase())
+    )
+
+    towelSizeOptions.sort(
+      (a, b) =>
+        towelSizes.indexOf(a.name.toLowerCase()) -
+        towelSizes.indexOf(b.name.toLowerCase())
+    )
+
+    return [
+      ...clothingSizesOptions,
+      ...bedSizeOptions,
+      ...pillowSizeOptions,
+      ...towelSizeOptions,
+      ...otherSizeOptions,
+    ]
   }
 
   return options
 }
 
-export default useSortFacetOptions
+export default sortSizes

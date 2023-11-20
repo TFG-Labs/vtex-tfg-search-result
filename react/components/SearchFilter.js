@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl'
 
 import { getFilterTitle } from '../constants/SearchHelpers'
 import { facetOptionShape } from '../constants/propTypes'
-import useSortFacetOptions from '../hooks/useSortFacetOptions'
+import sortSizes from '../utils/sortSizes'
 import FacetItem from './FacetItem'
 import FilterOptionTemplate from './FilterOptionTemplate'
 
@@ -32,7 +32,7 @@ const SearchFilter = ({
   const intl = useIntl()
   const sampleFacet = facets && facets.length > 0 ? facets[0] : null
   const facetTitle = getFilterTitle(title, intl)
-  const sortedFacets = useSortFacetOptions(facetTitle, facets)
+  const sortedFacets = sortSizes(facetTitle, facets)
 
   return (
     <FilterOptionTemplate
