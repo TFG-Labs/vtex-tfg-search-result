@@ -3,20 +3,24 @@ const clothingSizes = [
   '2xs',
   'xs',
   'xs - s',
+  'xs/s',
   's',
   'small',
   's - m',
   's-m',
   'sml/med',
+  's/m',
   'm',
   'medium',
   'm - l',
   'm-l',
   'ml',
+  'm/l',
   'l',
   'large',
   'l - xl',
   'l-xl',
+  'l/xl',
   'lrg/xlrg',
   'xl',
   'xxl',
@@ -55,7 +59,6 @@ const towelSizes = [
 const sortSizes = (facet, options) => {
   if (facet === 'Size') {
     // clothing sizes from 2xs to 5xl
-
     const clothingSizesOptions = options.filter(option =>
       clothingSizes.includes(option.name.toLowerCase())
     )
@@ -83,14 +86,29 @@ const sortSizes = (facet, options) => {
     )
 
     otherSizeOptions.sort((a, b) => {
-      // remove non-digits from start of string (eg. ±40cm)
-      const aName = parseFloat(a.name.replace(/^\D+/g, ''))
-      const bName = parseFloat(b.name.replace(/^\D+/g, ''))
+      // remove non-number, non-alpha from start of string (eg. ±40cm)
+      const aName = parseFloat(
+        a.name.toLowerCase().replace(/^[^a-zA-Z0-9]+/, '')
+      )
 
-      if (aName < bName) return -1
-      if (aName > bName) return 1
+      const bName = parseFloat(
+        b.name.toLowerCase().replace(/^[^a-zA-Z0-9]+/, '')
+      )
 
-      return 0
+      if (!Number.isNaN(aName) && !Number.isNaN(bName)) {
+        if (aName < bName) return -1
+        if (aName > bName) return 1
+      }
+
+      if (!Number.isNaN(aName) && Number.isNaN(bName)) {
+        return -1
+      }
+
+      if (Number.isNaN(aName) && !Number.isNaN(bName)) {
+        return 1
+      }
+
+      return a.name.localeCompare(b.name)
     })
 
     // sort clothing sizes by index in clothingSizes array
