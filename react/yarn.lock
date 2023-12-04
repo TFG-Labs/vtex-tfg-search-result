@@ -5340,9 +5340,9 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-"thefoschini.search-result@https://testing--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1700490316/public/@types/thefoschini.search-result":
+"thefoschini.search-result@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.search-result@3.131.0/public/@types/thefoschini.search-result":
   version "3.131.0"
-  resolved "https://testing--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.search-result@3.131.0+build1700490316/public/@types/thefoschini.search-result#4bc5c2e4671297e422e645b221fe7a09f2964f6d"
+  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.search-result@3.131.0/public/@types/thefoschini.search-result#b9933902364a054f317ca13af669b4b51c2acf5b"
 
 throat@^5.0.0:
   version "5.0.0"
@@ -5582,9 +5582,9 @@ validate-npm-package-license@^3.0.1:
   version "0.4.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-list-context@0.4.1/public/@types/vtex.product-list-context#e17348f7c5a4b6d543da1ce8858a726cb6d72fae"
 
-"vtex.product-summary@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary@2.85.0/public/@types/vtex.product-summary":
-  version "2.85.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary@2.85.0/public/@types/vtex.product-summary#152bccd364a354ef4ca6436049184693e1c71ace"
+"vtex.product-summary@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary@2.87.0/public/@types/vtex.product-summary":
+  version "2.87.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary@2.87.0/public/@types/vtex.product-summary#e0e58da094d5851e020782b1e1791425361350b3"
 
 "vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.2/public/@types/vtex.render-runtime":
   version "8.134.2"
@@ -5610,9 +5610,9 @@ validate-npm-package-license@^3.0.1:
   version "0.3.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shop-review-interfaces@0.3.1/public/@types/vtex.shop-review-interfaces#675fea5b65b960786395a801ddfdbe8c54da6862"
 
-"vtex.store-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.169.5/public/@types/vtex.store-components":
-  version "3.169.5"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.169.5/public/@types/vtex.store-components#b58f7ecc96f1450c577cc8eefe3059003829e2a4"
+"vtex.store-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.170.0/public/@types/vtex.store-components":
+  version "3.170.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.170.0/public/@types/vtex.store-components#1f5673bc0b974862ed0a0c0e61cefefff1d472c6"
 
 "vtex.store-drawer@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-drawer@0.16.3/public/@types/vtex.store-drawer":
   version "0.16.3"
