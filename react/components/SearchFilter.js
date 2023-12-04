@@ -2,10 +2,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useIntl } from 'react-intl'
 
-import FilterOptionTemplate from './FilterOptionTemplate'
-import FacetItem from './FacetItem'
-import { facetOptionShape } from '../constants/propTypes'
 import { getFilterTitle } from '../constants/SearchHelpers'
+import { facetOptionShape } from '../constants/propTypes'
+import sortSizes from '../utils/sortSizes'
+import FacetItem from './FacetItem'
+import FilterOptionTemplate from './FilterOptionTemplate'
 
 /**
  * Search Filter Component.
@@ -31,12 +32,13 @@ const SearchFilter = ({
   const intl = useIntl()
   const sampleFacet = facets && facets.length > 0 ? facets[0] : null
   const facetTitle = getFilterTitle(title, intl)
+  const sortedFacets = sortSizes(facetTitle, facets)
 
   return (
     <FilterOptionTemplate
       id={sampleFacet ? sampleFacet.map : null}
       title={facetTitle}
-      filters={facets}
+      filters={sortedFacets}
       quantity={quantity}
       initiallyCollapsed={initiallyCollapsed}
       lazyRender={lazyRender}

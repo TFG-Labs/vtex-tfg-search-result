@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { useIntl } from 'react-intl'
 import classNames from 'classnames'
-import { IconCaret } from 'vtex.store-icons'
-import { useRuntime } from 'vtex.render-runtime'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { useIntl } from 'react-intl'
 import { useCssHandles } from 'vtex.css-handles'
+import { useRuntime } from 'vtex.render-runtime'
+import { IconCaret } from 'vtex.store-icons'
 import { Spinner } from 'vtex.styleguide'
 
-import AccordionFilterItem from './AccordionFilterItem'
-import DepartmentFilters from './DepartmentFilters'
-import AccordionFilterGroup from './AccordionFilterGroup'
-import AccordionFilterPriceRange from './AccordionFilterPriceRange'
 import styles from '../searchResult.css'
+import sortSizes from '../utils/sortSizes'
+import AccordionFilterGroup from './AccordionFilterGroup'
+import AccordionFilterItem from './AccordionFilterItem'
+import AccordionFilterPriceRange from './AccordionFilterPriceRange'
+import DepartmentFilters from './DepartmentFilters'
 
 const CSS_HANDLES = [
   'filterBreadcrumbsItem',
@@ -159,15 +160,16 @@ const AccordionFilterContainer = ({
       )}
 
       {nonEmptyFilters.map(filter => {
-        const { type, title } = filter
+        const { type, title, facets, quantity } = filter
         const isOpen = openItem === filter.title
+        const sortedFacets = sortSizes(title, facets)
 
         switch (type) {
           case 'PriceRanges':
             return (
               <AccordionFilterPriceRange
-                title={filter.title}
-                facets={filter.facets}
+                title={title}
+                facets={facets}
                 key={title}
                 className={itemClassName}
                 open={isOpen}
@@ -186,9 +188,9 @@ const AccordionFilterContainer = ({
           default:
             return (
               <AccordionFilterGroup
-                title={filter.title}
-                facets={filter.facets}
-                quantity={filter.quantity}
+                title={title}
+                facets={sortedFacets}
+                quantity={quantity}
                 key={title}
                 className={itemClassName}
                 open={isOpen}

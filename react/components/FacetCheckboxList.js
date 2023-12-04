@@ -1,16 +1,16 @@
 import classNames from 'classnames'
-import React, { useContext, useState, useMemo } from 'react'
-import { Checkbox } from 'vtex.styleguide'
+import React, { useContext, useMemo, useState } from 'react'
 import { applyModifiers } from 'vtex.css-handles'
-import { useRuntime } from 'vtex.render-runtime'
 import { usePixel } from 'vtex.pixel-manager'
+import { useRuntime } from 'vtex.render-runtime'
 import { useSearchPage } from 'vtex.search-page-context/SearchPageContext'
+import { Checkbox } from 'vtex.styleguide'
 
-import { pushFilterManipulationPixelEvent } from '../utils/filterManipulationPixelEvents'
-import styles from '../searchResult.css'
-import SettingsContext from './SettingsContext'
-import { SearchFilterBar } from './SearchFilterBar'
 import { FACETS_RENDER_THRESHOLD } from '../constants/filterConstants'
+import styles from '../searchResult.css'
+import { pushFilterManipulationPixelEvent } from '../utils/filterManipulationPixelEvents'
+import { SearchFilterBar } from './SearchFilterBar'
+import SettingsContext from './SettingsContext'
 import ShowMoreFilterButton from './ShowMoreFilterButton'
 
 const useSettings = () => useContext(SettingsContext)
@@ -91,11 +91,7 @@ const FacetCheckboxList = ({
               className="mb0"
               checked={facet.selected}
               id={name}
-              label={
-                showFacetQuantity && !sampling
-                  ? `${facet.name} (${facet.quantity})`
-                  : facet.name
-              }
+              label={facet.name}
               name={name}
               onChange={() => {
                 pushFilterManipulationPixelEvent({
@@ -108,7 +104,12 @@ const FacetCheckboxList = ({
                 onFilterCheck({ ...facet, title: facetTitle })
               }}
               value={name}
-            />
+            />{' '}
+            {showFacetQuantity && !sampling && facet.quantity && (
+              <span className="thefoschini-search-result-3-x-filterItemQuantity">
+                ({facet.quantity})
+              </span>
+            )}
           </div>
         )
       })}
